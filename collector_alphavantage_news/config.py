@@ -17,7 +17,7 @@ ALPHAVANTAGE_BASE_URL: str = "https://www.alphavantage.co/query"
 
 # How far back to look for news (minutes). Should match the Cloud Run Job
 # trigger interval so there are no gaps or significant overlaps.
-NEWS_LOOKBACK_MINUTES: int = int(os.getenv("NEWS_LOOKBACK_MINUTES", "5"))
+NEWS_LOOKBACK_MINUTES: int = int(os.getenv("NEWS_LOOKBACK_MINUTES", "15"))
 
 # GCP Pub/Sub
 GCP_PROJECT_ID: str = os.getenv("GCP_PROJECT_ID", "")
@@ -25,6 +25,6 @@ NEWS_TOPIC_ID: str = os.getenv("NEWS_TOPIC_ID", "financial_news")
 
 # ── Prometheus Pushgateway ────────────────────────────────────────────────────
 # The pushgateway runs on the same GCP VM as the other collectors.
-PUSHGATEWAY_HOST: str = os.getenv("PUSHGATEWAY_HOST", "your-vm-public-ip")
+PUSHGATEWAY_HOST: str = os.getenv("PUSHGATEWAY_HOST", "34.29.74.247")
 PUSHGATEWAY_PORT: int = int(os.getenv("PUSHGATEWAY_PORT", "9091"))
 PUSHGATEWAY_JOB_NAME: str = os.getenv("PUSHGATEWAY_JOB_NAME", "news_collector")
