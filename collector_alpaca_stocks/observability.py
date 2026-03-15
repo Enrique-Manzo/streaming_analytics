@@ -237,18 +237,18 @@ def _stream_prometheus_lines(prefix: str, snap: dict) -> list[str]:
     lines = []
 
     def gauge(name, help_text, value):
-        lines += [
+        lines.extend([
             f"# HELP {prefix}_{name} {help_text}",
             f"# TYPE {prefix}_{name} gauge",
             f"{prefix}_{name} {value}",
-        ]
+        ])
 
     def counter(name, help_text, value):
-        lines += [
+        lines.extend([
             f"# HELP {prefix}_{name}_total {help_text}",
             f"# TYPE {prefix}_{name}_total counter",
             f"{prefix}_{name}_total {value}",
-        ]
+        ])
 
     gauge("throughput_msgs_per_sec",
           "Valid messages per second (rolling window)",
