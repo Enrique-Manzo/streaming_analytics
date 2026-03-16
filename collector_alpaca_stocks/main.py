@@ -70,12 +70,6 @@ app = FastAPI(
 async def metrics():
     """
     Prometheus-compatible metrics endpoint.
-
-    Add to prometheus.yml:
-        scrape_configs:
-          - job_name: alpaca_collector
-            static_configs:
-              - targets: ['<host>:8000']
     """
     return render_prometheus_metrics(obs)
 

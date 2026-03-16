@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Alpha Vantage ─────────────────────────────────────────────────────────────
-ALPHAVANTAGE_API_KEY: str = os.getenv("ALPHAVANTAGE_API_KEY", "")
+ALPHAVANTAGE_API_KEY: str = os.getenv("ALPHAVANTAGE_API_KEY", "2QMMQY5OANC9WE90")
 ALPHAVANTAGE_BASE_URL: str = "https://www.alphavantage.co/query"
 
 # How far back to look for news (minutes). Should match the Cloud Run Job
@@ -20,7 +20,7 @@ ALPHAVANTAGE_BASE_URL: str = "https://www.alphavantage.co/query"
 NEWS_LOOKBACK_MINUTES: int = int(os.getenv("NEWS_LOOKBACK_MINUTES", "15"))
 
 # GCP Pub/Sub
-GCP_PROJECT_ID: str = os.getenv("GCP_PROJECT_ID", "")
+GCP_PROJECT_ID: str = os.getenv("GCP_PROJECT_ID", "tfm-uoc-489523")
 NEWS_TOPIC_ID: str = os.getenv("NEWS_TOPIC_ID", "financial_news")
 
 # ── Prometheus Pushgateway ────────────────────────────────────────────────────

@@ -26,8 +26,8 @@ WORKDIR /app
 
 COPY --from=builder /install /usr/local
 
-# Copy application source — no .env (inject credentials at runtime)
-COPY config.py contract.py observability.py news_collector.py main.py ./
+# Copy application source owned by the runtime user — no .env (inject credentials at runtime)
+COPY --chown=collector:collector config.py contract.py observability.py news_collector.py main.py ./
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1

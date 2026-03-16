@@ -211,7 +211,7 @@ def run():
     options = PipelineOptions(
         project=PROJECT_ID,
         runner="DataflowRunner",
-        region="us-central1",
+        region="europe-west1",
         temp_location=f"gs://{BUCKET}/tmp",
         staging_location=f"gs://{BUCKET}/staging",
         job_name="coinbase-trades-pipeline",

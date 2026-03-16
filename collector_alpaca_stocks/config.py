@@ -18,8 +18,8 @@ SYMBOLS: list[str] = [
 ]
 
 # ── Alpaca credentials ────────────────────────────────────────────────────────
-ALPACA_API_KEY: str = os.getenv("ALPACA_API_KEY", "")
-ALPACA_API_SECRET: str = os.getenv("ALPACA_API_SECRET", "")
+ALPACA_API_KEY: str = os.getenv("ALPACA_API_KEY", "PKU4TIMS8WCJA0TE2CT6")
+ALPACA_API_SECRET: str = os.getenv("ALPACA_API_SECRET", "jwLRfht4l95qEAgnDsYUY4XvK8Av6sDKzha9AnCY")
 
 # ── WebSocket ─────────────────────────────────────────────────────────────────
 ALPACA_WS_URL: str = os.getenv(
@@ -38,12 +38,12 @@ DEDUP_MAXLEN: int = int(os.getenv("DEDUP_MAXLEN", "50000"))
 
 # FastAPI server
 HOST: str = os.getenv("HOST", "0.0.0.0")
-PORT: int = int(os.getenv("PORT", ""))
+PORT: int = int(os.getenv("PORT", "8001"))
 
 # WebSocket reconnection delay (seconds)
 WS_RECONNECT_DELAY: int = int(os.getenv("WS_RECONNECT_DELAY", "5"))
 
 # GCP Pub/Sub
-GCP_PROJECT_ID: str = os.getenv("GCP_PROJECT_ID", "")
+GCP_PROJECT_ID: str = os.getenv("GCP_PROJECT_ID", "tfm-uoc-489523")
 TRADES_TOPIC_ID: str = os.getenv("TRADES_TOPIC_ID", "stock_trades")
 QUOTES_TOPIC_ID: str = os.getenv("QUOTES_TOPIC_ID", "stock_quotes")
