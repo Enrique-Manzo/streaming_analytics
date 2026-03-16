@@ -12,16 +12,6 @@
 #       quotes → stock_quotes
 # ---------------------------------------------------------------------------
 
-import asyncio
-import json
-import time
-from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
-
-import websockets
-from google.cloud import pubsub_v1
-from pydantic import ValidationError
-
 from config import (
     ALPACA_API_KEY,
     ALPACA_API_SECRET,
@@ -32,6 +22,17 @@ from config import (
     TRADES_TOPIC_ID,
     WS_RECONNECT_DELAY,
 )
+
+import asyncio
+import json
+import time
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
+
+import websockets
+from google.cloud import pubsub_v1
+from pydantic import ValidationError
+
 from contract import QuoteEvent, TradeEvent
 from observability import ObservabilityState
 
