@@ -1,0 +1,95 @@
+# Environment variables
+.env
+.env.*
+*.env
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Pip
+pip-wheel-metadata/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Linting
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs / editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# SQLite databases
+*.sqlite3
+*.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Secrets / credentials
+secrets.json
+credentials.json
+service-account.json
+*.pem
+*.key
+
+# Terraform (if using infra)
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Docker
+docker-compose.override.yml
+
+# PyCharm
+.idea/
+
+# Mac/Linux swap files
+*~
+*.swp
+
+# Local config
+local_settings.py
+config.local.yaml
+
+# Generated ML/data files
+models/
+checkpoints/
+artifacts/
+data/
+
+.beam_pipelines/news_advanced/finbert_backbone/
