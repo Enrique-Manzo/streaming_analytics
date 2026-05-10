@@ -62,6 +62,22 @@ Como caso de uso experimental, se incorporan un clasificador de volatilidad de p
 
 El proyecto implementa una **arquitectura Kappa**, donde tanto el procesamiento histórico como el en tiempo real se modelan como flujos continuos de eventos. No existe una capa de procesamiento por lotes separada: toda la lógica de transformación, validación e inferencia ocurre en la pipeline de streaming.
 
+### Servicios cloud
+
+El proyecto está pensado para ejecutarse completamente en Google Cloud Platform sin que ningún componente necesite estar ejecutándose en local de manera permanente para el funcionamiento de este pipeline. Este repositorio incluye el código utilizado por los siguientes servicios:
+
+| Desarrollo en el repositorio               | Servicio Cloud | Ruta en el repositorio                             |
+|--------------------------------------------|----------------|----------------------------------------------------|
+| Colectores de datos de activos financieros | Compute Engine Virtual Machine | `/collector_alpaca_stocks` y `/collector_coinbase` |
+| Colector de noticias financieras           | Cloud Run Job  | `/collector_alphavantage_news`                     |
+| Pipelines de Apache Beam                   | GCP DataFlow   | `/beam_pipelines`                                  |
+
+El resto de los servicios, si bien se pueden configurar mendiante la CLI de GCLOUD, se han configurado por medio de la UI cloud y son los siguientes:
+- Compute Engine Virtual Machine (todas las características de la máquina virtual).
+- Pub/Sub
+- Scheduler
+- BigQuery
+
 ### Flujo de activos financieros (acciones y criptomonedas)
 
 ```
